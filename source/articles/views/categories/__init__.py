@@ -1,1 +1,2 @@
 from articles.views.categories.add_category_view import AddCategoryView
+from articles.views.categories.categories_list_view import CategoriesList
