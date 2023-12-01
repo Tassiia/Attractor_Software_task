@@ -1,0 +1,2 @@
+from accounts.views.registration_view import RegistrationView
+from accounts.views.username_change_view import UsernameChangeView
