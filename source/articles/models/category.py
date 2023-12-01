@@ -3,8 +3,8 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Category(models.Model):
-    title = models.CharField(max_length=200, verbose_name=_('Article title'))
-    parent = models.ForeignKey('self', on_delete=models.RESTRICT)
+    title = models.CharField(max_length=200, verbose_name=_('Category title'))
+    parent = models.ForeignKey('self', on_delete=models.RESTRICT, blank=True, null=True)
 
     class Meta:
         db_table = 'categories'
