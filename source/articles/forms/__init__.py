@@ -1,1 +1,2 @@
 from articles.forms.category_form import CategoryForm
+from articles.forms.category_update_form import CategoryUpdateForm
