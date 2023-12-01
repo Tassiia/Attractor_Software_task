@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}Users list{% endblock %}
+
+{% block content %}
+    {% for person in people %}
+        <p>{{ person.username }}</p>
+    {% endfor %}
+{% endblock %}
