@@ -1,9 +1,10 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import DeleteView
 
 from articles.models import Article
 
 
-class DeleteArticleView(DeleteView):
+class DeleteArticleView(LoginRequiredMixin, DeleteView):
     model = Article
     template_name = 'articles/delete_article.html'
     success_url = '/'
