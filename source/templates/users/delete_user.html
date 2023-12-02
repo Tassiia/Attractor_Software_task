@@ -3,10 +3,7 @@
 {% block title %}Delete User{% endblock %}
 
 {% block content %}
+    <h3>Delete user</h3>
     <p>Are you sure you want to delete user {{ person.username }}?</p>
-    <form action="" method="POST">
-        {% csrf_token %}
-        <button type="submit">Yes</button>
-        <a href="{% url 'accounts:users_list' %}">No</a>
-    </form>
+    {% include 'partials/yes_no_buttons.html' %}
 {% endblock %}

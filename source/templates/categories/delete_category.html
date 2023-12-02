@@ -3,10 +3,7 @@
 {% block title %}Delete Category{% endblock %}
 
 {% block content %}
+    <h3>Delete category</h3>
     <p>Are you sure you want to delete category {{ category.title }}?</p>
-    <form action="" method="POST">
-        {% csrf_token %}
-        <button type="submit">Yes</button>
-        <a href="{% url 'articles:categories_list' %}">No</a>
-    </form>
+    {% include 'partials/yes_no_buttons.html' %}
 {% endblock %}

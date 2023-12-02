@@ -1,0 +1,5 @@
+<form action="" method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Yes</button>
+    <a href="{% url 'accounts:users_list' %}" class="btn btn-primary">No</a>
+</form>
