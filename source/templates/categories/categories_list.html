@@ -3,7 +3,39 @@
 {% block title %}Categories{% endblock %}
 
 {% block content %}
-    {% for category in categories %}
-        {{ category.title }}
-    {% endfor %}
+    <div class="table-responsive">
+        <table class="table responsive border nowrap mb-0 bg-white table-striped" id="categoriesTable">
+            <thead class="table-light fw-semibold">
+                <tr class="align-middle">
+                    <th class="text-center">Title</th>
+                    <th class="text-center">Parent</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for category in categories %}
+                <tr class="align-middle">
+                    <td class="text-center">
+                        {{ category.title }}
+                    </td>
+                    <td class="text-center">
+                        {{ category.parent.title }}
+                    </td>
+                    <td class="text-center">
+                        <a href="{% url 'articles:update_category' pk=category.pk %}" class="mx-2">
+                            <i class="bi bi-pencil"></i></a>
+                        <a href="{% url 'articles:delete_category' pk=category.pk %}" class="mx-2">
+                            <i class="bi bi-x-circle"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        let table = new DataTable('#categoriesTable');
+    </script>
 {% endblock %}
