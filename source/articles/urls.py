@@ -1,4 +1,5 @@
 from django.urls import path
+from django.views.generic import RedirectView
 
 from articles.views.categories import AddCategoryView, CategoriesListView, UpdateCategoryView, DeleteCategoryView
 from articles.views.articles import ArticlesListView, AddArticleView, UpdateArticleView, DeleteArticleView
@@ -6,6 +7,8 @@ from articles.views.articles import ArticlesListView, AddArticleView, UpdateArti
 app_name = 'articles'
 
 urlpatterns = [
+    path('', RedirectView.as_view(permanent=True, url='articles/'), name='index'),
+
     path('categories/', CategoriesListView.as_view(), name='categories_list'),
     path('categories/add/', AddCategoryView.as_view(), name='add_category'),
     path('categories/<int:pk>/change/', UpdateCategoryView.as_view(), name='update_category'),

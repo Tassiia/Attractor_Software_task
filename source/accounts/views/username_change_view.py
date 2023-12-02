@@ -1,4 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
 from django.views.generic import UpdateView
 
 from accounts.forms import UsernameChangeForm
@@ -9,4 +10,7 @@ class UsernameChangeView(LoginRequiredMixin, UpdateView):
     model = CustomUser
     form_class = UsernameChangeForm
     template_name = 'users/change_username.html'
-    success_url = '/'
+
+    def get_success_url(self):
+        user_pk = self.object.pk
+        return reverse_lazy('accounts:user_detailed', pk=user_pk)
