@@ -3,7 +3,36 @@
 {% block title %}Articles{% endblock %}
 
 {% block content %}
-    {% for article in articles %}
-        {{ article.title }}
-    {% endfor %}
+    <div class="table-responsive">
+        <table class="table responsive border nowrap mb-0 bg-white table-striped" id="articlesTable">
+            <thead class="table-light fw-semibold">
+                <tr class="align-middle">
+                    <th class="text-center">Title</th>
+                    <th class="text-center">Category</th>
+                    <th class="text-center">User</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for article in articles %}
+                <tr class="align-middle">
+                    <td class="text-center">
+                        {{ article.title }}
+                    </td>
+                    <td class="text-center">
+                        {{ article.category }}
+                    </td>
+                    <td class="text-center">
+                        {{ article.user }}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        let table = new DataTable('#articlesTable');
+    </script>
 {% endblock %}
