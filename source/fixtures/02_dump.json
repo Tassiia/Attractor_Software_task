@@ -1,0 +1,57 @@
+[
+{
+    "model": "articles.category",
+    "pk": 1,
+    "fields": {
+        "title": "category1",
+        "parent": null
+    }
+},
+{
+    "model": "articles.category",
+    "pk": 2,
+    "fields": {
+        "title": "category2",
+        "parent": 1
+    }
+},
+{
+    "model": "articles.article",
+    "pk": 1,
+    "fields": {
+        "category": 1,
+        "user": [
+            "admin"
+        ],
+        "title": "Article1",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel nibh finibus, ullamcorper ex ut, cursus nisi. Morbi bibendum nisi ac ipsum aliquet, sit amet ultrices erat iaculis. Curabitur bibendum augue vitae lacinia tempus. Mauris vehicula ultricies tellus, at ultricies quam sollicitudin et. Mauris tincidunt fringilla risus id ullamcorper. In pharetra, purus ac sollicitudin porttitor, elit sapien consectetur nisi, vitae tincidunt nunc nisi maximus ligula. Sed pellentesque lectus sit amet metus ultrices, et dignissim ligula vestibulum. Phasellus porttitor eget nisi at egestas. Cras vel leo dignissim tellus interdum dictum. Sed ultrices sagittis turpis.",
+        "image": "articles/00043-793047869.png"
+    }
+},
+{
+    "model": "articles.article",
+    "pk": 2,
+    "fields": {
+        "category": 2,
+        "user": [
+            "user1"
+        ],
+        "title": "Article 2",
+        "description": "Curabitur eget ultrices tortor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus congue enim ac quam imperdiet, et tempus dolor tristique. Vestibulum egestas felis dui, vitae pellentesque eros pharetra nec. Pellentesque interdum ultricies libero id consectetur. Nam vulputate scelerisque mi, vitae volutpat lectus dictum ac. Quisque in ligula tempus tortor pharetra blandit. Ut sagittis sodales sapien sit amet facilisis. Proin at augue diam. Proin fermentum ex eget diam ultrices egestas. Morbi mattis leo euismod nibh iaculis accumsan. In nisi nisi, pellentesque sit amet tortor vel, laoreet bibendum eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;",
+        "image": "articles/uda5yij7k8g51.jpg"
+    }
+},
+{
+    "model": "articles.article",
+    "pk": 3,
+    "fields": {
+        "category": 1,
+        "user": [
+            "user1"
+        ],
+        "title": "Article3",
+        "description": "Ut velit orci, rutrum quis malesuada ut, ultricies sit amet magna. Curabitur maximus porttitor urna, quis pellentesque massa vehicula in. Mauris vel eros gravida, commodo dui sit amet, pharetra urna. Nam in metus placerat, dictum elit at, venenatis sem. Ut feugiat vulputate imperdiet. Nullam massa est, vestibulum at purus a, ullamcorper lobortis odio. Pellentesque velit tortor, tincidunt eget odio in, hendrerit blandit dui. Nulla ut maximus ex. Fusce sagittis, nisl quis aliquet ultricies, leo ante dapibus mi, et tincidunt libero enim in tortor. Vivamus et euismod mi, in lobortis lacus. Aliquam congue sodales nisl, quis condimentum nisl lobortis efficitur. Phasellus at mauris faucibus, tempus nulla eu, cursus ipsum. Proin mattis ullamcorper eleifend. Ut vitae erat vitae turpis consequat pellentesque. Pellentesque dictum pretium viverra. Proin et urna orci.",
+        "image": "articles/4eec109b2429afe6af9bb1c296717659.jpeg"
+    }
+}
+]
