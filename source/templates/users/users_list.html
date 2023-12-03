@@ -3,6 +3,7 @@
 {% block title %}Users list{% endblock %}
 
 {% block content %}
+    <a href="{% url 'accounts:register_user' %}" class="btn btn-primary mb-3">Add new user</a>
     <div class="table-responsive">
         <table class="table responsive border nowrap mb-0 bg-white table-striped" id="usersTable">
             <thead class="table-light fw-semibold">

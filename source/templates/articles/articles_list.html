@@ -3,43 +3,16 @@
 {% block title %}Articles{% endblock %}
 
 {% block content %}
-    <div class="table-responsive">
-        <table class="table responsive border nowrap mb-0 bg-white table-striped" id="articlesTable">
-            <thead class="table-light fw-semibold">
-                <tr class="align-middle">
-                    <th class="text-center">Title</th>
-                    <th class="text-center">Category</th>
-                    <th class="text-center">User</th>
-                    <th class="text-center">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-            {% for article in articles %}
-                <tr class="align-middle">
-                    <td class="text-center">
-                        {{ article.title }}
-                    </td>
-                    <td class="text-center">
-                        {{ article.category }}
-                    </td>
-                    <td class="text-center">
-                        {{ article.user }}
-                    </td>
-                    <td class="text-center">
-                        <a href="{% url 'articles:update_article' pk=article.pk %}" class="mx-2">
-                            <i class="bi bi-pencil"></i></a>
-                        <a href="{% url 'articles:delete_article' pk=article.pk %}" class="mx-2">
-                            <i class="bi bi-x-circle"></i></a>
-                    </td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-    </div>
-{% endblock %}
-
-{% block scripts %}
-    <script>
-        let table = new DataTable('#articlesTable');
-    </script>
+    <a href="{% url 'articles:add_article' %}" class="btn btn-primary mb-2">Add new article</a>
+    {% for article in articles %}
+        <div class="card my-3">
+            <img src={{ article.image.url }} class="card-img-top" alt="article-image">
+            <div class="card-body">
+                <h5 class="card-title">{{ article.title }}</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">{{ article.category }}</h6>
+                <h6 class="card-subtitle mb-2 text-body-secondary">{{ article.user }}</h6>
+                <p class="card-text">{{ article.description }}</p>
+            </div>
+        </div>
+    {% endfor %}
 {% endblock %}
