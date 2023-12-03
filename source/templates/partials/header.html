@@ -1,0 +1,16 @@
+<header class="header header-sticky mb-4">
+    <div class="container-fluid">
+        <button class="header-toggler px-md-0 me-md-3" type="button"
+                onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
+            <i class="bi bi-list"></i>
+        </button>
+        <a class="header-brand d-md-none" href="#">
+        <ul class="header-nav ms-3">
+            {% if request.user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link py-0" href="{% url 'accounts:logout' %}">Logout</a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+</header>

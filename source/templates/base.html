@@ -14,9 +14,10 @@
 <body>
     {% include 'partials/sidebar.html' %}
     <div class="wrapper d-flex flex-column min-vh-100 bg-light">
-        <div class="body flex-grow-1 px-3">
+        {% include 'partials/header.html' %}
+        <div class="body flex-grow-1 px-3"
             <div class="container my-4 ">
-            {% block content %}{% endblock %}
+                {% block content %}{% endblock %}
             </div>
         </div>
     </div>
