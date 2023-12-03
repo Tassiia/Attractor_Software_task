@@ -1,0 +1,22 @@
+services:
+  web:
+    image: python:3.10-alpine
+    volumes:
+      - ./source/:/app/
+    ports:
+      - 8000:8000
+    restart: always
+    env_file:
+      - ./.env
+    depends_on:
+      - db
+    entrypoint: /app/run.sh
+  db:
+    image: postgres:15
+    ports:
+      - "5433:5432"
+    env_file:
+      - .env
+    restart: always
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data/
