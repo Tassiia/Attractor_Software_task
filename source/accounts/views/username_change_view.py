@@ -13,4 +13,4 @@ class UsernameChangeView(LoginRequiredMixin, UpdateView):
 
     def get_success_url(self):
         user_pk = self.object.pk
-        return reverse_lazy('accounts:user_detailed', pk=user_pk)
+        return reverse_lazy('accounts:users_list')
